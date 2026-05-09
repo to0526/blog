@@ -1,0 +1,30 @@
+<%= form_with model: [:admin, post] do |f| %>
+  <% if post.errors.any? %>
+    <div class="error-messages">
+      <ul>
+        <% post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body, "本文（Markdown）" %>
+    <%= f.text_area :body, rows: 20, required: true %>
+  </div>
+
+  <div class="field field-inline">
+    <%= f.check_box :published %>
+    <%= f.label :published, "公開する" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
