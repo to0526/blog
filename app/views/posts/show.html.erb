@@ -1,0 +1,30 @@
+<% content_for :title, @post.title %>
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      <%= @post.title %>
+      <% unless @post.published? %>
+        <span class="badge-draft">下書き</span>
+      <% end %>
+    </h1>
+    <time class="post-date" datetime="<%= @post.created_at.iso8601 %>">
+      <%= @post.created_at.strftime("%Y年%m月%d日") %>
+    </time>
+    <% if logged_in? %>
+      <div class="post-actions">
+        <%= link_to "編集", edit_admin_post_path(@post) %>
+        <%= button_to "削除", admin_post_path(@post), method: :delete,
+            data: { turbo_confirm: "本当に削除しますか？" } %>
+      </div>
+    <% end %>
+  </header>
+
+  <div class="post-body">
+    <%= markdown(@post.body) %>
+  </div>
+</article>
+
+<div class="back-link">
+  <%= link_to "← 一覧に戻る", root_path %>
+</div>

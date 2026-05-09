@@ -1,0 +1,16 @@
+published_post:
+  title: 公開記事
+  body: |
+    # 見出し
+
+    本文のMarkdownテキストです。
+
+    ```ruby
+    puts "hello"
+    ```
+  published: true
+
+draft_post:
+  title: 下書き記事
+  body: まだ非公開の記事です。
+  published: false

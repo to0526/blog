@@ -1,0 +1,27 @@
+<% content_for :title, "記事一覧" %>
+
+<div class="posts-index">
+  <div class="page-header">
+    <h1>記事一覧</h1>
+  </div>
+
+  <% if @posts.empty? %>
+    <p class="empty-message">まだ記事がありません。</p>
+  <% else %>
+    <ul class="post-list">
+      <% @posts.each do |post| %>
+        <li class="post-item">
+          <a href="<%= post_path(post) %>" class="post-title">
+            <%= post.title %>
+            <% unless post.published? %>
+              <span class="badge-draft">下書き</span>
+            <% end %>
+          </a>
+          <time class="post-date" datetime="<%= post.created_at.iso8601 %>">
+            <%= post.created_at.strftime("%Y年%m月%d日") %>
+          </time>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
