@@ -13,30 +13,30 @@
 
 ### Phase 1: モデル・認証
 
-- [ ] `User` モデル作成（has_secure_password）
-- [ ] `Post` モデル作成
-- [ ] `db/seeds.rb` で初期ユーザー作成
-- [ ] `SessionsController` 作成（ログイン・ログアウト）
-- [ ] `ApplicationController` に `current_user` / `require_login` 追加
+- [x] `User` モデル作成（has_secure_password）
+- [x] `Post` モデル作成
+- [x] `db/seeds.rb` で初期ユーザー作成
+- [x] `SessionsController` 作成（ログイン・ログアウト）
+- [x] `ApplicationController` に `current_user` / `require_login` 追加
 
 ### Phase 2: 管理側（記事CRUD）
 
-- [ ] `Admin::PostsController` 作成（new / create / edit / update / destroy）
-- [ ] 管理側ビュー作成（new.html.erb / edit.html.erb）
-- [ ] Markdownエディタ（textarea）実装
-- [ ] 公開/非公開の切り替えUI
+- [x] `Admin::PostsController` 作成（new / create / edit / update / destroy）
+- [x] 管理側ビュー作成（new.html.erb / edit.html.erb）
+- [x] Markdownエディタ（textarea）実装
+- [x] 公開/非公開の切り替えUI
 
 ### Phase 3: 公開側
 
-- [ ] `PostsController` 作成（index / show）
-- [ ] 記事一覧ビュー（公開記事のみ表示）
-- [ ] 記事詳細ビュー（Markdownをレンダリング）
-- [ ] `redcarpet` + `rouge` セットアップ
+- [x] `PostsController` 作成（index / show）
+- [x] 記事一覧ビュー（公開記事のみ表示）
+- [x] 記事詳細ビュー（Markdownをレンダリング）
+- [x] `redcarpet` + `rouge` セットアップ
 
 ### Phase 4: スタイリング
 
-- [ ] CSSフレームワーク or 素のCSS でベーススタイル適用
-- [ ] コードブロックのシンタックスハイライト確認
+- [x] CSSフレームワーク or 素のCSS でベーススタイル適用
+- [x] コードブロックのシンタックスハイライト確認
 
 ### Phase 5: AWS デプロイ
 
