@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   # 公開側
   root "posts#index"
-  resources :posts, only: [:show]
+  resources :posts, only: [ :show ]
 
   # 管理側
   namespace :admin do
-    resources :posts, only: [:new, :create, :edit, :update, :destroy]
+    resources :posts, only: [ :new, :create, :edit, :update, :destroy ]
   end
 
   # 認証
