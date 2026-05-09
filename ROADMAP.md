@@ -6,9 +6,9 @@
 
 ### Phase 0: 開発環境構築
 
-- [ ] Railsプロジェクト新規作成
-- [ ] Dockerfile / docker-compose.yml 作成
-- [ ] SQLite3 設定確認（database.yml）
+- [x] Railsプロジェクト新規作成
+- [x] Dockerfile / docker-compose.yml 作成
+- [x] SQLite3 設定確認（database.yml）
 - [ ] `bin/setup` で起動確認
 
 ### Phase 1: モデル・認証
