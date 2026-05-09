@@ -18,12 +18,15 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Fix bin permissions
+        run: chmod +x bin/*
+
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
-      
+
       - name: Scan for known security vulnerabilities in gems used
         run: bin/bundler-audit
-      
+
   scan_js:
     runs-on: ubuntu-latest
 
@@ -35,6 +38,9 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+
+      - name: Fix bin permissions
+        run: chmod +x bin/*
 
       - name: Scan for security vulnerabilities in JavaScript dependencies
         run: bin/importmap audit
@@ -51,6 +57,9 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+
+      - name: Fix bin permissions
+        run: chmod +x bin/*
 
       - name: Prepare RuboCop cache
         uses: actions/cache@v4
